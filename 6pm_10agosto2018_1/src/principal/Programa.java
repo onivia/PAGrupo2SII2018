@@ -11,6 +11,10 @@ public class Programa {
         
         int[] numeros2 = {10,80};
         
+        for(int i : numeros2) {
+            System.out.println(i);            
+        }
+        
         //[2][2][3]
         int[][][] numeros3 = {
             {
@@ -23,6 +27,12 @@ public class Programa {
             }
         };
         
-        System.out.println(numeros3[1][1][0]);
+        for(int[][] d1 : numeros3) {
+            for(int[] d2 : d1) {
+                for(int i : d2) {
+                    //System.out.println(i);
+                }
+            }            
+        }
     }   
 }
