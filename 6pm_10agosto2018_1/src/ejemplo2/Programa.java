@@ -2,18 +2,31 @@ package ejemplo2;
 
 public class Programa {
     public static void main(String[] args) {
-        int ivar1 = 453425435;
-        short svar2 = 100;
-        //el valor de 100 si cabe en un short, pero int no puede ser asignado
-        //directamente en un short
-        short svar1 = (short)ivar1;
+        int edad = 10;
         
-        //
-        float fvar1 = 100.02f;
-        int ivar2 = (int)fvar1;
+        //<,>,>=,<=,!=,==
+        if((++edad) == 10) {
+            System.out.println("fue true" + edad);                        
+        }
+        else if(edad == 12) {
+            System.out.println("fue false" + edad);            
+        }
+        else {
+            System.out.println("fue refaaalse" + edad);
+        }
+        //d aki pa bajo
         
-        char cvar1 = 64;
-        
-        System.out.println(cvar1);
+        switch (edad) {
+            case 11:
+            case 10:
+                System.out.println("tienes 10 o 11");                
+                break;
+            case 20:
+                System.out.println("tienes 20");
+                break;
+            default:
+                System.out.println("tienes una edad rara");
+                break;
+        }
     }
 }
