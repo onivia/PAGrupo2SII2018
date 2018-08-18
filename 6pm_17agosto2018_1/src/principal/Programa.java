@@ -16,6 +16,4 @@ public class Programa {
         if(otrodia == EnumsGenerales.DiasSemana.MARTES)
             System.out.println("tambn es MARTES");
     }
-    
 }
-
