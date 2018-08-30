@@ -63,11 +63,10 @@ public class Programa {
     }    
 
     public static void item5() {
-        int[] nums = {3,3,1,1};
+        int[] nums = {1,1,2,3,3,3};
         int posiMasRepetido = -1;
         
-        //posiMasRepetido = getNumeroMasRepetido(nums);
-        getNumeroMasRepetido(nums);
+        posiMasRepetido = getNumeroMasRepetido(nums);        
         if(posiMasRepetido >= 0)
             System.out.println("El Numero mas repetido es: " + nums[posiMasRepetido]);
         else
@@ -84,9 +83,9 @@ public class Programa {
         //{2,3,4,3,2} - {1,1,0,0,0} -> -1
         //{5} - {0} -> 0
         
-        System.out.println(Arrays.toString(getConteoRepetidos(nums)));
-        //int[] arregloRepetidos = getConteoRepetidos(nums);        
-        //posiMasRepetido = getPosicionMasRepetido(arregloRepetidos);
+        //System.out.println(Arrays.toString(getConteoRepetidos(nums)));
+        int[] arregloRepeticiones = getConteoRepetidos(nums);        
+        posiMasRepetido = getPosicionMasRepetido(arregloRepeticiones);
         
         return posiMasRepetido;                        
     }
@@ -106,10 +105,23 @@ public class Programa {
         return arregloRepetidos;
     }
     
-    private static int getPosicionMasRepetido(int[] arregloRepetidos) {
-        int posiMasRepetido = 0;
+    private static int getPosicionMasRepetido(int[] arregloRepetidos) {        
+        int posiMayor = 0;
         
-        return posiMasRepetido;
+        for (int i = 0; i < arregloRepetidos.length - 1; i++) {
+            if(arregloRepetidos[i+1] > arregloRepetidos[posiMayor]) {
+                posiMayor = i + 1;                
+            }
+        }
+        
+        for (int i = 0; i < arregloRepetidos.length; i++) {
+            if(arregloRepetidos[i] == arregloRepetidos[posiMayor] && i != posiMayor) {
+                posiMayor = -1;
+                break;
+            }                
+        }
+        
+        return posiMayor;
     }    
     
     private static void ordenaAscendentemente(int[] arreglo) {
