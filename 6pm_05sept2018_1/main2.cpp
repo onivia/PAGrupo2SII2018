@@ -13,7 +13,7 @@ void escribeArchivo() {
     archivo.close();
 }
 
-int obtienePosiChar(string cadena, string caracter) {
+int obtienePosiChar2(string cadena, string caracter) {
     return (cadena.find(caracter));    
 }
 
@@ -30,12 +30,12 @@ void leerArchivo() {
         
         posi1 = linea.size();
         while(linea.size() > 0) {
-            if(obtienePosiChar(linea,",") > linea.size()) {
+            if(obtienePosiChar2(linea,",") > linea.size()) {
                 numero = linea.substr(i,posi1);
                 linea = "";
             }
             else {
-                posi1 = obtienePosiChar(linea,",");
+                posi1 = obtienePosiChar2(linea,",");
                 numero = linea.substr(i,posi1);
                 linea = linea.substr(posi1 + 1);
             }
@@ -55,7 +55,7 @@ void f2(int a[]) {
 }
 
 
-int main() {
+int main2() {
     //escribeArchivo();
     //leerArchivo();
     int a1[1] = {10};
@@ -65,7 +65,7 @@ int main() {
     cout<<"a: "<<a<<endl; //21
     
     f2(a1);
-    cout<<"a[0]"<<a1[0]<<endl; //11
+    cout<<"a[0]: "<<a1[0]<<endl; //11
 
     return 0;
 }
