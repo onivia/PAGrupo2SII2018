@@ -1,15 +1,25 @@
 #include <iostream>
 using namespace std;
 
-void f1(int n) {
-    cout<<"el valor de n es: "<<n<<endl;
+int suma(int n1, int n2) {
+    return (n1+n2);
+}
+
+int resta(int n1, int n2) {
+    return (n1-n2);
+}
+
+int multi(int a, int b) {
+    return (a*b);
 }
 
 int main() {
-    void (*p)(int) = f1;
+    int (*operacion[])(int,int) = {suma,resta,multi};
     
-    p(10);
-
+    int resultado = operacion[2](10,5);
+    
+    cout<<resultado<<endl;
+    
     return 0;
 }
 
