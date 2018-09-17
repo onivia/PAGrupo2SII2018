@@ -1,25 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int suma(int n1, int n2) {
-    return (n1+n2);
+void f1(int a) {
+    cout<<"paso x f1: "<<a<<endl;
 }
 
-int resta(int n1, int n2) {
-    return (n1-n2);
+void f2(int b) {
+    cout<<"paso x f2: "<<b<<endl;
 }
 
-int multi(int a, int b) {
-    return (a*b);
+void wrapper(void (*f)(int),int i) {
+    f(i);    
 }
 
 int main() {
-    int (*operacion[])(int,int) = {suma,resta,multi};
+    void(*p1[])(int) = {f1,f2};
     
-    int resultado = operacion[2](10,5);
-    
-    cout<<resultado<<endl;
+    wrapper(p1[0],200);
     
     return 0;
 }
-
