@@ -38,4 +38,12 @@ public class Programa {
     private static void LiquidarTercero(Tercero tercero) {
         tercero.liquidar();
     }
+    
+    private static void calcularRteFte(IRteFte objRteFte) {
+        objRteFte.calcularRteFte();
+    }
+    
+    private static void Notificar(INotificable objNotificable) {
+        objNotificable.notificar();
+    }
 }
