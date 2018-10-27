@@ -4,19 +4,20 @@ package base;
  *
  * @author ONivia
  */
-public class Cola {
+public class Cola extends MiLista {
     public Cola() {
+        super();
     }
     
-    public void encolar(Nodo nodo) {
-        
+    public void encolar(Nodo nodo) {        
+        super.adicionar(nodo);
     }
     
-    public void desencolar() {
-        
+    public Nodo desencolar() {
+        return (super.obteneryRemoverPrimero());
     }
     
-    public Nodo obtener() {
-        return null;
+    public Nodo obtener() {        
+        return (super.obtenerPrimero());
     }
 }

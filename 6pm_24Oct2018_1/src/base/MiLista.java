@@ -20,7 +20,7 @@ public class MiLista {
         return (p==null&&u==null);
     }
 
-    public Nodo obtenerNodoxPosicion(int posi) {
+    protected Nodo obtenerNodoxPosicion(int posi) {
         Nodo nodoAux = null;        
         
         if(posi>=0 && posi<tamano) {
@@ -61,16 +61,16 @@ public class MiLista {
         }            
     }
 
-    public void insertarPrimero(Nodo nodo) {
+    protected void insertarPrimero(Nodo nodo) {
         insertarNodoxPosicion(nodo, 0);
     }
     
-    public void adicionar(Nodo nodo) {
+    protected void adicionar(Nodo nodo) {
         insertarNodoxPosicion(nodo, tamano);
         u = nodo;
     }
     
-    public void removerPrimerNodo() {
+    protected void removerPrimerNodo() {
         if(!estaVacia()) {
             if(tamano > 1) { //si hay mas de 1 nodo
                 Nodo nodoAux = p.sgte;
@@ -85,11 +85,11 @@ public class MiLista {
         }        
     }
 	
-    public Nodo obtenerPrimero() {
+    protected Nodo obtenerPrimero() {
         return (obtenerNodoxPosicion(0));        
     }
     
-    public Nodo obteneryRemoverPrimero() {        
+    protected Nodo obteneryRemoverPrimero() {        
         Nodo nodoCopia = null;
         Nodo nodoAux = null;
         
@@ -102,7 +102,7 @@ public class MiLista {
         return nodoCopia;        
     }
     
-    public void recorrerLista() {
+    protected void recorrerLista() {
         Nodo nodoAux = null;
 
         if(!estaVacia()) {
