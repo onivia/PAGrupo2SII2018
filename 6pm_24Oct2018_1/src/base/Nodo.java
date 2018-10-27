@@ -13,8 +13,8 @@ public class Nodo {
         this.sgte = null;
     }
 
-    public Nodo(int dato, Nodo sgte) {
+    public Nodo(int dato) {
         this.dato = dato;
-        this.sgte = sgte;
+        this.sgte = null;
     }
 }

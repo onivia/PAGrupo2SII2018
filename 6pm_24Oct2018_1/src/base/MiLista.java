@@ -35,7 +35,7 @@ public class MiLista {
         return nodoAux;
     }
 	
-    public void insertarNodoxPosicion(Nodo nodo, int posi) {
+    private void insertarNodoxPosicion(Nodo nodo, int posi) {
         if(estaVacia()) {
             p = nodo;
             u = p;
@@ -61,23 +61,56 @@ public class MiLista {
         }            
     }
 
+    public void insertarPrimero(Nodo nodo) {
+        insertarNodoxPosicion(nodo, 0);
+    }
+    
     public void adicionar(Nodo nodo) {
-		
+        insertarNodoxPosicion(nodo, tamano);
+        u = nodo;
     }
     
     public void removerPrimerNodo() {
-        
+        if(!estaVacia()) {
+            if(tamano > 1) { //si hay mas de 1 nodo
+                Nodo nodoAux = p.sgte;
+                p.sgte = null;
+                p = nodoAux;                
+            }
+            else  { //solo hay 1 nodo
+                p = null;
+                u = null;                
+            }
+            tamano -= 1;
+        }        
     }
 	
     public Nodo obtenerPrimero() {
-        
+        return (obtenerNodoxPosicion(0));        
     }
     
-    public Nodo obteneryRemoverPrimero() {       
+    public Nodo obteneryRemoverPrimero() {        
+        Nodo nodoCopia = null;
+        Nodo nodoAux = null;
         
+        if(!estaVacia()) {
+            nodoAux = obtenerPrimero();
+            nodoCopia = new Nodo(nodoAux.dato);
+            removerPrimerNodo();            
+        }
+        
+        return nodoCopia;        
     }
     
     public void recorrerLista() {
-        
+        Nodo nodoAux = null;
+
+        if(!estaVacia()) {
+            nodoAux = p;
+            while(nodoAux!=null) {
+                System.out.println(nodoAux.dato);
+                nodoAux = nodoAux.sgte;
+            }
+        }
     }
 }
